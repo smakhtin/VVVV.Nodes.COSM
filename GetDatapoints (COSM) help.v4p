@@ -1,0 +1,119 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+   <PATCH nodename="C:\Users\Smakhtin\Documents\GitRepos\VVVV.Nodes.COSM\GetDatapoints (COSM) help.v4p" systemname="GetDatapoints (COSM) help" filename="C:\Users\Smakhtin\Documents\GitRepos\VVVV.Nodes.COSM\GetDatapoints (COSM) help.v4p">
+   <BOUNDS type="Window" left="9495" top="8280" width="9000" height="6000">
+   </BOUNDS>
+   <NODE systemname="GetDatapoints (COSM)" filename="GetDatapoints (COSM).v4p" nodename="GetDatapoints (COSM)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="2100" top="2985" width="3585" height="270">
+   </BOUNDS>
+   <PIN pinname="Request" visible="1">
+   </PIN>
+   <PIN pinname="Start Time (Year Month Day Hour Min Sec)" visible="1">
+   </PIN>
+   <PIN pinname="End Time (Year Month Day Hour Min Sec)" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="1">
+   <BOUNDS type="Node" left="2115" top="390" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2115" top="390" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Request">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="2" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="2430" top="975" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2430" top="975" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="90451">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Feed ID|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Feed ID">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="3855" top="990" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3855" top="990" width="1575" height="375">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" encoded="0" values="accelerometerX">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" encoded="0" values="text">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Datastream">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output String" dstnodeid="0" dstpinname="Datastream">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="5">
+   <BOUNDS type="Node" left="870" top="900" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="870" top="900" width="1020" height="1380">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="6">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Start Time (Year Month Day Hour Min Sec)|">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="6" values="2012,12,9,16,0,0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Start Time (Year Month Day Hour Min Sec)">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="6">
+   <BOUNDS type="Node" left="5790" top="615" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5790" top="615" width="1020" height="1380">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="6">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="6" values="2012,12,9,16,30,0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|End Time (Year Month Day Hour Min Sec)|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Y Output Value" dstnodeid="0" dstpinname="End Time (Year Month Day Hour Min Sec)">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="7" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="2085" top="4095" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2085" top="4095" width="5775" height="87075">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="7" dstpinname="Input String">
+   </LINK>
+   </PATCH>
